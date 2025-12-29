@@ -103,13 +103,13 @@ h2 {
 }
 
 .name {
-  padding-top: 20px;
+  padding-top: 12px;
   margin: 0;
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 32px;
 }
 
-.one {
+/* .one {
   width: 160px;
   height: 160px;
   position: relative;
@@ -122,7 +122,33 @@ h2 {
   transition: opacity .2s ease-in-out;
   -moz-transition: opacity .2s ease-in-out;
   -webkit-transition: opacity .2s ease-in-out;
+} */
+
+.one {
+  width: 160px;        /* Increased from 160px */
+  height: 160px;       /* Increased from 160px */
+  position: relative;
 }
+
+.two {
+  width: 160x;        /* Increased from 160px */
+  height: 160px;       /* Increased from 160px */
+  position: absolute;
+  top: 0;              /* ADDED: Perfect alignment */
+  left: 0;             /* ADDED: Perfect alignment */
+  transition: opacity .2s ease-in-out;
+  -moz-transition: opacity .2s ease-in-out;
+  -webkit-transition: opacity .2s ease-in-out;
+}
+
+/* ADD THIS NEW RULE at the end of your CSS */
+.one img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* Crops to fill perfectly - no distortion */
+  display: block;
+}
+
 
 .fade {
   transition: opacity .2s ease-in-out;
@@ -140,3 +166,92 @@ span.highlight {
     display: inline-block;
     border-radius: 10px;
 }
+/* --------------------------- */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Default visual scale */
+  zoom: 1.15;   /* 105% */
+}
+
+
+/* Constrain the main centered container so scaling doesn't push it past the viewport width */
+body > table { max-width: calc(800px / var(--page-scale)); }
+
+/* Reduce vertical padding in table cells to help fit the viewport when scaled */
+table td, table th { padding: 12px !important; }
+
+/* Profile toggle (image <-> video) */
+.profile-toggle {
+  width: 80%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  display: block;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+  position: relative;
+}
+.profile-toggle:focus { outline: 3px solid rgba(23,114,208,0.15); }
+.profile-toggle img.profile-img,
+.profile-toggle video.profile-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: inherit;
+}
+.profile-toggle video.profile-video { display: none; }
+.profile-toggle.show-video img.profile-img { display: none; }
+.profile-toggle.show-video video.profile-video { display: block; }
+
+
+/* Year heading styles */
+.year-heading {
+  margin: 4px 0 8px 0; /* reduced top margin */
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+  color: #1772d0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-bottom: 2px solid rgba(23,114,208,0.08);
+  padding-bottom: 6px;
+}
+
+/* Improve readability for the research paragraph */
+.lead-paragraph {
+  font-family: Helvetica, Arial, sans-serif;
+  text-align: justify;
+  text-justify: inter-word;
+  color: #111822;
+  line-height: 1.65;
+  max-width: 100ch;
+  margin: 0.125rem auto 0rem;
+}
+
+/* Tighter padding for the Research section cell */
+.section-research { padding-top: 8px !important; padding-bottom: 6px !important; }
+
+/* Theme classes */
+body.theme-neutral { background-color:#F7F7F7; color:#222; }
+body.theme-cream { background-color:#FEFBF7; color:#222; }
+body.theme-blue { background-color:#F4F8FF; color:#20232a; }
+body.theme-sage { background-color:#F3F6F3; color:#222; }
+
+/* Adjust link colors to match theme while preserving contrast */
+body.theme-neutral a { color: #1772d0; }
+body.theme-cream a { color: #165ca8; }
+body.theme-blue a { color: #1357b6; }
+body.theme-sage a { color: #16643a; }
+
+/* End of global scaling block */
