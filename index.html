@@ -63,11 +63,48 @@
           <table style="width:100%;border:0px;border-spacing:0px 6px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             
             <tr>
+              <td colspan="2" style="padding:8px;"><h3 class="year-heading">2026</h3></td>
+            </tr>
+            
+            <!-- Paper 4: EEG Seizure Detection (NO COLOR) -->
+            <tr onmouseout="eeg_stop()" onmouseover="eeg_start()" bgcolor="#ffffd0">
+              <td style="padding:16px;width:20%;vertical-align:middle">
+                <div class="one">
+                  <div class="two" id='eeg_image'>
+                    <img src='images/eeg_seizure_after.jpg' width=100%>
+                  </div>
+                  <img src='images/eeg_seizure_before.jpg' width=100%>
+                </div>
+                <script type="text/javascript">
+                  function eeg_start() { document.getElementById('eeg_image').style.opacity = "1"; }
+                  function eeg_stop() { document.getElementById('eeg_image').style.opacity = "0"; }
+                  eeg_stop()
+                </script>
+              </td>
+              <td style="padding:8px;width:80%;vertical-align:middle">
+                <a href="https://doi.org/10.1016/j.neunet.2025.108520">
+                  <span class="papertitle">A Unified Framework for EEG Seizure Detection Using Universum-Integrated Generalized Eigenvalues Proximal Support Vector Machine</span>
+                </a>
+                <br>
+                <a href="https://scholar.google.com/citations?user=N_6RJUEAAAAJ">Yogesh Kumar</a>,
+                <strong>Vrushank Ahire</strong>,
+                <a href="https://cse.iitrpr.ac.in/mudasir/">MA Ganaie</a>
+                <br>
+                <em>Neural Networks</em>, 2026
+                <br>
+                <a href="https://arxiv.org/abs/2512.21170">arXiv</a>
+                <p></p>
+                <p>Universum-enhanced GEPSVM classifiers improving EEG seizure detection through stable eigenvalue formulations.</p>
+              </td>
+            </tr>
+            
+
+            <tr>
               <td colspan="2" style="padding:8px;"><h3 class="year-heading">2025</h3></td>
             </tr>
 
             <!-- Paper 1: MAVEN (COLOR) -->
-            <tr onmouseout="maven_stop()" onmouseover="maven_start()" bgcolor="#ffffd0">
+            <tr onmouseout="maven_stop()" onmouseover="maven_start()">
               <td style="padding:16px;width:20%;vertical-align:middle">
                 <div class="one">
                   <div class="two" id='maven_image'>
@@ -103,7 +140,7 @@
             </tr>
             
             <!-- Paper 2: Granular Ball K-Class Twin Support Vector Classifier (NO COLOR) -->
-            <tr onmouseout="granular_stop()" onmouseover="granular_start()">
+            <tr onmouseout="granular_stop()" onmouseover="granular_start()" bgcolor="#ffffd0">
               <td style="padding:16px;width:20%;vertical-align:middle">
                 <div class="one">
                   <div class="two" id='granular_image'>
@@ -135,7 +172,7 @@
             </tr>
             
             <!-- Paper 3: SFANet (COLORED) -->
-            <tr onmouseout="sfanet_stop()" onmouseover="sfanet_start()" bgcolor="#ffffd0">
+            <tr onmouseout="sfanet_stop()" onmouseover="sfanet_start()" >
               <td style="padding:16px;width:20%;vertical-align:middle">
                 <div class="one">
                   <div class="two" id='sfanet_image'>
@@ -170,38 +207,7 @@
               </td>
             </tr>
             
-            <!-- Paper 4: EEG Seizure Detection (NO COLOR) -->
-            <tr onmouseout="eeg_stop()" onmouseover="eeg_start()">
-              <td style="padding:16px;width:20%;vertical-align:middle">
-                <div class="one">
-                  <div class="two" id='eeg_image'>
-                    <img src='images/eeg_seizure_after.jpg' width=100%>
-                  </div>
-                  <img src='images/eeg_seizure_before.jpg' width=100%>
-                </div>
-                <script type="text/javascript">
-                  function eeg_start() { document.getElementById('eeg_image').style.opacity = "1"; }
-                  function eeg_stop() { document.getElementById('eeg_image').style.opacity = "0"; }
-                  eeg_stop()
-                </script>
-              </td>
-              <td style="padding:8px;width:80%;vertical-align:middle">
-                <a href="https://arxiv.org/abs/2512.21170">
-                  <span class="papertitle">A Unified Framework for EEG Seizure Detection Using Universum-Integrated Generalized Eigenvalues Proximal Support Vector Machine</span>
-                </a>
-                <br>
-                <a href="https://scholar.google.com/citations?user=N_6RJUEAAAAJ">Yogesh Kumar</a>,
-                <strong>Vrushank Ahire</strong>,
-                <a href="https://cse.iitrpr.ac.in/mudasir/">MA Ganaie</a>
-                <br>
-                <em>Accepted, Neural Networks</em>, 2025
-                <br>
-                <a href="https://arxiv.org/abs/2512.21170">arXiv</a>
-                <p></p>
-                <p>Universum-enhanced GEPSVM classifiers improving EEG seizure detection through stable eigenvalue formulations.</p>
-              </td>
-            </tr>
-            
+
             <!-- Paper 5: Intuitionistic Fuzzy Graph (COLOR) -->
             <tr onmouseout="ifg_stop()" onmouseover="ifg_start()" bgcolor="#ffffd0">
               <td style="padding:16px;width:20%;vertical-align:middle">
