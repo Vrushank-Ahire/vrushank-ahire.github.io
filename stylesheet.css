@@ -168,6 +168,8 @@ h2 {
   letter-spacing: 0.2px;
   /* text-align: justify; */
   max-width: 100%;
+  padding: 8px 10px;   /* added padding */
+
 }
 
 
@@ -212,8 +214,8 @@ body > table { max-width: calc(800px / var(--page-scale)); }
 table td, table th { padding: 12px !important; }
 
 .profile-img {
-  width: 180px;
-  height: 180px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   object-fit: cover;
   object-position: center;
