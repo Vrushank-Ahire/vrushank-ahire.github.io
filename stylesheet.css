@@ -84,6 +84,16 @@ a {
   font-size: 14px;
 }
 
+body,
+td,
+th,
+tr,
+p,
+a {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
 strong {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 14px;
@@ -149,6 +159,19 @@ h2 {
   display: block;
 }
 
+.intro-text {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 13px;      
+  line-height: 1.5;
+  color: #2d3748;        /* readable dark gray */
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  /* text-align: justify; */
+  max-width: 100%;
+}
+
+
+
 
 .fade {
   transition: opacity .2s ease-in-out;
@@ -188,31 +211,16 @@ body > table { max-width: calc(800px / var(--page-scale)); }
 /* Reduce vertical padding in table cells to help fit the viewport when scaled */
 table td, table th { padding: 12px !important; }
 
-/* Profile toggle (image <-> video) */
-.profile-toggle {
-  width: 80%;
-  aspect-ratio: 1/1;
-  overflow: hidden;
-  display: block;
+.profile-img {
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
-  margin-left: auto;
-  margin-right: auto;
-  cursor: pointer;
-  position: relative;
-}
-.profile-toggle:focus { outline: 3px solid rgba(23,114,208,0.15); }
-.profile-toggle img.profile-img,
-.profile-toggle video.profile-video {
-  width: 100%;
-  height: 100%;
   object-fit: cover;
   object-position: center;
-  display: block;
-  border-radius: inherit;
 }
-.profile-toggle video.profile-video { display: none; }
-.profile-toggle.show-video img.profile-img { display: none; }
-.profile-toggle.show-video video.profile-video { display: block; }
+
+
+
 
 
 /* Year heading styles */

@@ -8,6 +8,311 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <style>
+      /* Import Google Fonts for better typography */
+      @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600&family=Inter:wght@400;500;600&display=swap');
+      
+      /* Enhanced paper section styles */
+      .papertitle {
+        font-family: 'Crimson Pro', Georgia, serif;
+        font-size: 18px;
+        font-weight: 600;
+        color: #2c5f8d; /* Blue color for clickability */
+        line-height: 1.4;
+        letter-spacing: -0.01em;
+        transition: all 0.2s ease;
+        text-decoration: none;
+        display: inline-block;
+        margin-bottom: 4px;
+      }
+      
+      .papertitle:hover {
+        color: #1e4564; /* Darker blue on hover */
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 3px;
+      }
+      
+.paper-row {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 28px;
+  padding: 24px;
+  margin: 16px 0;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+}
+      
+      .paper-row:hover {
+        background: #f8f9fa;
+        border-color: #e0e0e0;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+      }
+      
+      .paper-row.highlight-yellow {
+        background: linear-gradient(135deg, #fff9e6 0%, rgba(255, 249, 230, 0.5) 100%);
+      }
+      
+      .paper-row.highlight-yellow:hover {
+        background: linear-gradient(135deg, #fff9e6 0%, rgba(255, 249, 230, 0.7) 100%);
+      }
+      
+      .paper-image {
+        position: relative;
+      }
+      
+      .one {
+        width: 180px;
+        height: 180px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 6px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        transition: all 0.3s ease;
+        border: 1px solid #eaeaea;
+      }
+      
+      .paper-row:hover .one {
+        box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+        transform: scale(1.03);
+      }
+      
+      .two {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+      }
+      
+      .one img,
+      .two img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 5px;
+      }
+      
+      .paper-content {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      
+      .paper-authors {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        font-size: 14.5px;
+        line-height: 1.6;
+        color: #444;
+        margin-top: 2px;
+      }
+      
+      .paper-authors a {
+        color: #2c5f8d;
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+      
+      .paper-authors a:hover {
+        color: #1e4564;
+        text-decoration: underline;
+      }
+      
+      .paper-venue {
+        font-family: 'Inter', monospace;
+        font-size: 13px;
+        color: #c17817;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        margin: 4px 0 !important;
+        padding: 2px 0;
+      }
+      
+      .paper-links {
+        margin: 10px 0 0 !important;
+      }
+      
+      .paper-links a {
+        font-family: 'Inter', sans-serif;
+        font-size: 12px;
+        font-weight: 400;
+        padding: 5px 14px;
+        background: #f0f4f8;
+        color: #2c5f8d;
+        border-radius: 4px;
+        display: inline-block;
+        margin-right: 8px;
+        margin-top: 4px;
+        transition: all 0.2s ease;
+        border: 1px solid #d1e0f0;
+        text-decoration: none;
+      }
+      
+      .paper-links a:hover {
+        background: #2c5f8d;
+        color: white;
+        border-color: #2c5f8d;
+        transform: translateY(-1px);
+        box-shadow: 0 3px 8px rgba(44, 95, 141, 0.2);
+      }
+      
+      .paper-row p {
+        margin: 10px 0 0;
+        font-family: 'Inter', sans-serif;
+        font-size: 14.5px;
+        line-height: 1.65;
+        color: #555;
+        max-width: 90%;
+      }
+      
+      .year-heading {
+        font-family: 'Crimson Pro', Georgia, serif;
+        font-size: 26px;
+        font-weight: 600;
+        margin: 25px 0 15px;
+        padding-bottom: 12px;
+        border-bottom: 2px solid #e5e3dc;
+        color: #1a1a1a;
+        position: relative;
+        letter-spacing: -0.01em;
+      }
+      
+      .year-heading::before {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 80px;
+        height: 3px;
+        background: #2c5f8d;
+        border-radius: 2px;
+      }
+      
+      /* Section header */
+      .section-research h2 {
+        font-family: 'Crimson Pro', Georgia, serif;
+        font-size: 20px;
+        font-weight: 60;
+        margin: 0 0 16px;
+        color: #1a1a1a;
+        letter-spacing: -0.02em;
+      }
+      
+      .lead-paragraph {
+        font-family: 'Inter', sans-serif;
+        font-size: 14px;
+        line-height: 1.7;
+        color: #4a4a4a;
+        max-width: 95%;
+      }
+
+      
+      
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #2d3748;
+  background: #e3ae6d;
+}
+
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.paper-row {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+}
+
+.paper-row:hover {
+  background: #f8fafc;
+  border-color: #cbd5e0;
+}
+      
+      a {
+        color: #2c5f8d;
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+      
+      a:hover {
+        color: #1e4564;
+        text-decoration: underline;
+      }
+      
+      strong {
+        color: #1a1a1a;
+        font-weight: 600;
+      }
+      
+      @media (max-width: 768px) {
+        .paper-row {
+          grid-template-columns: 1fr;
+          gap: 22px;
+          padding: 22px;
+        }
+        
+        .one {
+          width: 100%;
+          max-width: 280px;
+          height: 280px;
+          margin: 0 auto;
+        }
+        
+        .paper-content {
+          text-align: left;
+        }
+        
+        .paper-links {
+          text-align: left;
+        }
+        
+        .year-heading {
+          font-size: 22px;
+          margin: 40px 0 20px;
+        }
+        
+        .section-research h2 {
+          font-size: 28px;
+        }
+        
+        .papertitle {
+          font-size: 17px;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .paper-row {
+          padding: 18px;
+          margin: 12px 0;
+        }
+        
+        .one {
+          height: 240px;
+        }
+        
+        .paper-links a {
+          font-size: 12.5px;
+          padding: 4px 12px;
+          margin-right: 6px;
+        }
+        
+        .papertitle {
+          font-size: 16px;
+        }
+        
+        .paper-authors {
+          font-size: 14px;
+        }
+      }
+    </style>
   </head>
 
   <body class="theme-cream">
@@ -20,35 +325,19 @@
                 <p class="name" style="text-align: center;">
                   Vrushank Ahire
                 </p>
-                <p>
-                  <!-- I'm a senior CS undergrad at the <a href="https://www.iitrpr.ac.in">Indian Institute of Technology (IIT) Ropar</a>, advised by <a href="https://cse.iitrpr.ac.in/mudasir/">Dr. Mudasir Ganaie</a>. My research focuses on multimodal AI, with emphasis on speech, vision, clinical applications, and ML optimization. I've pursued research internships at <a href="https://www.ntu.edu.sg">NTU-Singapore</a>, <a href="https://english.pku.edu.cn">Peking University</a>, and <a href="https://www.monash.edu">Monash University</a>. My work has been published in top venues, including <a href="https://cvpr.thecvf.com">CVPR</a>, <a href="https://www.inns.org/ijcnn-home">IJCNN</a>, <a href="https://hipc.org">HiPC</a>, and in the journals <a href="https://www.sciencedirect.com/journal/neural-networks">Neural Networks</a> and <a href="https://www.sciencedirect.com/journal/pattern-recognition">Pattern Recognition</a>. I'm  a <a href="https://hyundai.scholarsbox.in/">Hyundai Hope Scholarship</a> recipient. -->
+                <p class="intro-text">
                   I'm a senior CS undergrad at the <a href="https://www.iitrpr.ac.in">Indian Institute of Technology (IIT) Ropar</a>, advised by <a href="https://cse.iitrpr.ac.in/mudasir/">Dr. Mudasir Ganaie</a>. My research focuses on multimodal AI, with a particular emphasis on speech and vision, as well as ML optimization. I've gained research experience through internships at <a href="https://www.ntu.edu.sg">NTU-Singapore</a>, <a href="https://english.pku.edu.cn">Peking University</a>, and <a href="https://www.monash.edu">Monash University</a>. My work has been published in top conferences and journals, including <a href="https://cvpr.thecvf.com">CVPR</a>, <a href="https://www.inns.org/ijcnn-home">IJCNN</a>, <a href="https://hipc.org">HiPC</a>, <a href="https://www.sciencedirect.com/journal/neural-networks">Neural Networks</a> and <a href="https://www.sciencedirect.com/journal/pattern-recognition">Pattern Recognition</a>. I am also a recipient of the <a href="https://hyundai.scholarsbox.in/">Hyundai Hope Scholarship</a>.
                 </p>
                 <p style="text-align:center">
                   <a href="https://mail.google.com/mail/?view=cm&fs=1&to=vahire.works@gmail.com" target="_blank" rel="noopener noreferrer" style="pointer-events:auto;cursor:pointer;" title="Compose email to Vrushank Ahire (opens in new tab)">Email</a> &nbsp;/&nbsp;
                   <a href="data/VrushankAhire-CV.pdf">CV</a> &nbsp;/&nbsp;
-                  <!-- <a href="data/VrushankAhire-bio.txt">Bio</a> &nbsp;/&nbsp; -->
                   <a href="https://scholar.google.co.in/citations?user=yintsqkAAAAJ">Scholar</a> &nbsp;/&nbsp;
-                  <!-- <a href="https://orcid.org/0009-0000-1399-2983">ORCID</a> &nbsp;/&nbsp; -->
                   <a href="https://www.linkedin.com/in/vrushank-ahire">LinkedIn</a> &nbsp;/&nbsp;
                   <a href="https://github.com/vrushank-ahire">Github</a>
                 </p>
               </td>
               <td style="padding:2.5%;width:32%">
-                <div id="profile-toggle" class="profile-toggle" role="button" aria-pressed="false" tabindex="0" aria-label="Toggle profile image and synthesized video">
-                  <img src="images/profile_pic.jpg" alt="Profile image of Vrushank Ahire" class="profile-img">
-                  <video class="profile-video" src="images/profile_video.mp4" poster="images/profile-poster.jpg" muted loop playsinline aria-label="Synthesized profile video">
-                    Your browser does not support the video tag.
-                  </video>
-                  <button type="button" class="profile-toggle-btn" tabindex="-1" aria-hidden="true">
-                    <!-- play icon -->
-                    <svg class="icon play" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-                    <!-- pause icon -->
-                    <svg class="icon pause" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:none"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
-                  </button>
-                </div>
-                <!-- <p class="profile-caption">Original image ↔ synthesized video</p> -->
-                <p style="text-align:center; font-size:12px; color:#666; margin-top:8px;">Image ↔ Synthesized video ◉</p>
+                <img src="images/profile_pic.jpg" alt="Vrushank Ahire" class="profile-img">
               </td>
             </tr>
           </tbody></table>
@@ -60,255 +349,209 @@
                 </td>
               </tr>
             </tbody></table>
-          <table style="width:100%;border:0px;border-spacing:0px 6px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          
+          <!-- 2026 Papers -->
+          <div style="margin: 24px 0;">
+            <h3 class="year-heading">2026</h3>
             
-            <tr>
-              <td colspan="2" style="padding:8px;"><h3 class="year-heading">2026</h3></td>
-            </tr>
-            
-            <!-- Paper 4: EEG Seizure Detection (NO COLOR) -->
-            <tr onmouseout="eeg_stop()" onmouseover="eeg_start()" bgcolor="#ffffd0">
-              <td style="padding:16px;width:20%;vertical-align:middle">
+            <div class="paper-row highlight-yellow" onmouseout="eeg_stop()" onmouseover="eeg_start()">
+              <div class="paper-image">
                 <div class="one">
                   <div class="two" id='eeg_image'>
-                    <img src='images/eeg_seizure_after.jpg' width=100%>
+                    <img src='images/eeg_seizure_after.jpg' alt="EEG Seizure Detection">
                   </div>
-                  <img src='images/eeg_seizure_before.jpg' width=100%>
+                  <img src='images/eeg_seizure_before.jpg' alt="EEG Seizure Detection">
                 </div>
-                <script type="text/javascript">
-                  function eeg_start() { document.getElementById('eeg_image').style.opacity = "1"; }
-                  function eeg_stop() { document.getElementById('eeg_image').style.opacity = "0"; }
-                  eeg_stop()
-                </script>
-              </td>
-              <td style="padding:8px;width:80%;vertical-align:middle">
-                <a href="https://doi.org/10.1016/j.neunet.2025.108520">
-                  <span class="papertitle">A Unified Framework for EEG Seizure Detection Using Universum-Integrated Generalized Eigenvalues Proximal Support Vector Machine</span>
+              </div>
+              <div class="paper-content">
+                <a href="https://doi.org/10.1016/j.neunet.2025.108520" class="papertitle">
+                  A Unified Framework for EEG Seizure Detection Using Universum-Integrated Generalized Eigenvalues Proximal Support Vector Machine
                 </a>
-                <br>
-                <a href="https://scholar.google.com/citations?user=N_6RJUEAAAAJ">Yogesh Kumar</a>,
-                <strong>Vrushank Ahire</strong>,
-                <a href="https://cse.iitrpr.ac.in/mudasir/">MA Ganaie</a>
-                <br>
-                <em>Neural Networks</em>, 2026
-                <br>
-                <a href="https://arxiv.org/abs/2512.21170">arXiv</a>
-                <p></p>
+                <div class="paper-authors">
+                  <a href="https://scholar.google.com/citations?user=N_6RJUEAAAAJ">Yogesh Kumar</a>,
+                  <strong>Vrushank Ahire</strong>,
+                  <a href="https://cse.iitrpr.ac.in/mudasir/">MA Ganaie</a>
+                </div>
+                <div class="paper-venue">Neural Networks, 2026</div>
+                <div class="paper-links">
+                  <a href="https://arxiv.org/abs/2512.21170">arXiv</a>
+                </div>
                 <p>Universum-enhanced GEPSVM classifiers improving EEG seizure detection through stable eigenvalue formulations.</p>
-              </td>
-            </tr>
+              </div>
+            </div>
+          </div>
+          
+          <!-- 2025 Papers -->
+          <div style="margin: 24px 0;">
+            <h3 class="year-heading">2025</h3>
             
-
-            <tr>
-              <td colspan="2" style="padding:8px;"><h3 class="year-heading">2025</h3></td>
-            </tr>
-
-            <!-- Paper 1: MAVEN (COLOR) -->
-            <tr onmouseout="maven_stop()" onmouseover="maven_start()">
-              <td style="padding:16px;width:20%;vertical-align:middle">
+            <div class="paper-row" onmouseout="maven_stop()" onmouseover="maven_start()">
+              <div class="paper-image">
                 <div class="one">
                   <div class="two" id='maven_image'>
-                    <img src='images/maven_after.jpg' width=100%>
+                    <img src='images/maven_after.jpg' alt="MAVEN">
                   </div>
-                  <img src='images/maven_before.jpg' width=100%>
+                  <img src='images/maven_before.jpg' alt="MAVEN">
                 </div>
-                <script type="text/javascript">
-                  function maven_start() { document.getElementById('maven_image').style.opacity = "1"; }
-                  function maven_stop() { document.getElementById('maven_image').style.opacity = "0"; }
-                  maven_stop()
-                </script>
-              </td>
-              <td style="padding:8px;width:80%;vertical-align:middle">
-                <a href="https://openaccess.thecvf.com/content/CVPR2025W/ABAW/html/Ahire_MAVEN_Multi-modal_Attention_for_Valence-Arousal_Emotion_Network_CVPRW_2025_paper.html">
-                  <span class="papertitle">MAVEN: Multi-modal Attention for Valence-Arousal Emotion Network</span>
+              </div>
+              <div class="paper-content">
+                <a href="https://openaccess.thecvf.com/content/CVPR2025W/ABAW/html/Ahire_MAVEN_Multi-modal_Attention_for_Valence-Arousal_Emotion_Network_CVPRW_2025_paper.html" class="papertitle">
+                  MAVEN: Multi-modal Attention for Valence-Arousal Emotion Network
                 </a>
-                <br>
-                <strong>Vrushank Ahire</strong>,
-                <a href="https://www.linkedin.com/in/kunal-shah-b78738173">Kunal Shah</a>,
-                <a href="https://www.linkedin.com/in/mudasir-khan-20a421202">Mudasir Khan</a>,
-                <a href="https://scholar.google.com/citations?user=TjYqD8cAAAAJ">Nikhil Pakhale</a>,
-                <a href="https://scholar.google.com/citations?user=HdjoOQIAAAAJ">Lownish Sookha</a>,
-                <a href="https://cse.iitrpr.ac.in/mudasir/">Mudasir Ganaie</a>,
-                <a href="https://research.monash.edu/en/persons/abhinav-dhall/">Abhinav Dhall</a>
-                <br>
-                <em>CVPR</em>, 2025
-                <br>
-                <a href="https://arxiv.org/abs/2503.12623">arXiv</a>
-                <p></p>
+                <div class="paper-authors">
+                  <strong>Vrushank Ahire</strong>,
+                  <a href="https://www.linkedin.com/in/kunal-shah-b78738173">Kunal Shah</a>,
+                  <a href="https://www.linkedin.com/in/mudasir-khan-20a421202">Mudasir Khan</a>,
+                  <a href="https://scholar.google.com/citations?user=TjYqD8cAAAAJ">Nikhil Pakhale</a>,
+                  <a href="https://scholar.google.com/citations?user=HdjoOQIAAAAJ">Lownish Sookha</a>,
+                  <a href="https://cse.iitrpr.ac.in/mudasir/">Mudasir Ganaie</a>,
+                  <a href="https://research.monash.edu/en/persons/abhinav-dhall/">Abhinav Dhall</a>
+                </div>
+                <div class="paper-venue">CVPR, 2025</div>
+                <div class="paper-links">
+                  <a href="https://arxiv.org/abs/2503.12623">arXiv</a>
+                </div>
                 <p>Bi-directional cross-modal attention across visual/audio/text modalities for dynamic emotion recognition in polar coordinates.</p>
-              </td>
-            </tr>
+              </div>
+            </div>
             
-            <!-- Paper 2: Granular Ball K-Class Twin Support Vector Classifier (NO COLOR) -->
-            <tr onmouseout="granular_stop()" onmouseover="granular_start()" bgcolor="#ffffd0">
-              <td style="padding:16px;width:20%;vertical-align:middle">
+            <div class="paper-row highlight-yellow" onmouseout="granular_stop()" onmouseover="granular_start()">
+              <div class="paper-image">
                 <div class="one">
                   <div class="two" id='granular_image'>
-                    <img src='images/granular_after.jpg' width=100%>
+                    <img src='images/granular_after.jpg' alt="Granular Ball">
                   </div>
-                  <img src='images/granular_before.jpg' width=100%>
+                  <img src='images/granular_before.jpg' alt="Granular Ball">
                 </div>
-                <script type="text/javascript">
-                  function granular_start() { document.getElementById('granular_image').style.opacity = "1"; }
-                  function granular_stop() { document.getElementById('granular_image').style.opacity = "0"; }
-                  granular_stop()
-                  </script>
-              </td>
-              <td style="padding:8px;width:80%;vertical-align:middle">
-                <a href="https://doi.org/10.1016/j.patcog.2025.111636">
-                  <span class="papertitle">Granular Ball K-Class Twin Support Vector Classifier</span>
+              </div>
+              <div class="paper-content">
+                <a href="https://doi.org/10.1016/j.patcog.2025.111636" class="papertitle">
+                  Granular Ball K-Class Twin Support Vector Classifier
                 </a>
-                <br>
-                <a href="https://cse.iitrpr.ac.in/mudasir/">MA Ganaie</a>,
-                <strong>Vrushank Ahire</strong>,
-                <a href="https://aero.engin.umich.edu/people/girard-anouck/">Anouck Girard</a>
-                <br>
-                <em>Pattern Recognition</em>, 2025
-                <br>
-                <a href="https://arxiv.org/abs/2412.05438">arXiv</a>
-                <p></p>
+                <div class="paper-authors">
+                  <a href="https://cse.iitrpr.ac.in/mudasir/">MA Ganaie</a>,
+                  <strong>Vrushank Ahire</strong>,
+                  <a href="https://aero.engin.umich.edu/people/girard-anouck/">Anouck Girard</a>
+                </div>
+                <div class="paper-venue">Pattern Recognition, 2025</div>
+                <div class="paper-links">
+                  <a href="https://arxiv.org/abs/2412.05438">arXiv</a>
+                </div>
                 <p>Combines granular ball computing with Twin SVM for robust multi-class classification solving two smaller QP problems for efficiency.</p>
-              </td>
-            </tr>
+              </div>
+            </div>
             
-            <!-- Paper 3: SFANet (COLORED) -->
-            <tr onmouseout="sfanet_stop()" onmouseover="sfanet_start()" >
-              <td style="padding:16px;width:20%;vertical-align:middle">
+            <div class="paper-row" onmouseout="sfanet_stop()" onmouseover="sfanet_start()">
+              <div class="paper-image">
                 <div class="one">
                   <div class="two" id='sfanet_image'>
-                    <img src='images/sfanet_after.jpg' width=100%>
+                    <img src='images/sfanet_after.jpg' alt="SFANet">
                   </div>
-                  <img src='images/sfanet_before.jpg' width=100%>
+                  <img src='images/sfanet_before.jpg' alt="SFANet">
                 </div>
-                <script type="text/javascript">
-                  function sfanet_start() { document.getElementById('sfanet_image').style.opacity = "1"; }
-                  function sfanet_stop() { document.getElementById('sfanet_image').style.opacity = "0"; }
-                  sfanet_stop()
-                </script>
-              </td>
-              <td style="padding:8px;width:80%;vertical-align:middle">
-                <a href="https://arxiv.org/abs/2510.04630">
-                  <span class="papertitle">SFANet: Spatial-Frequency Attention Network for Deepfake Detection</span>
+              </div>
+              <div class="paper-content">
+                <a href="https://arxiv.org/abs/2510.04630" class="papertitle">
+                  SFANet: Spatial-Frequency Attention Network for Deepfake Detection
                 </a>
-                <br>
-                <strong>Vrushank Ahire</strong>,
-                <a href="https://www.linkedin.com/in/aniruddh-muley-56002a256">Aniruddh Muley</a>,
-                <a href="https://in.linkedin.com/in/shivam-zample-a76179323">Shivam Zample</a>,
-                <a href="https://in.linkedin.com/in/siddharth-verma-186396259">Siddharth Verma</a>,
-                <a href="https://www.linkedin.com/in/pranav-menon-95a95a257">Pranav Menon</a>,
-                <a href="https://scholar.google.com/citations?user=aI7hnU8AAAAJ">Surbhi Madan</a>,
-                <a href="https://research.monash.edu/en/persons/abhinav-dhall/">Abhinav Dhall</a>
-                <br>
-                <em>IEEE Signal Processing Cup, ICASSP</em>, 2025
-                <br>
-                <a href="https://arxiv.org/abs/2510.04630">arXiv</a>
-                <p></p>
+                <div class="paper-authors">
+                  <strong>Vrushank Ahire</strong>,
+                  <a href="https://www.linkedin.com/in/aniruddh-muley-56002a256">Aniruddh Muley</a>,
+                  <a href="https://in.linkedin.com/in/shivam-zample-a76179323">Shivam Zample</a>,
+                  <a href="https://in.linkedin.com/in/siddharth-verma-186396259">Siddharth Verma</a>,
+                  <a href="https://www.linkedin.com/in/pranav-menon-95a95a257">Pranav Menon</a>,
+                  <a href="https://scholar.google.com/citations?user=aI7hnU8AAAAJ">Surbhi Madan</a>,
+                  <a href="https://research.monash.edu/en/persons/abhinav-dhall/">Abhinav Dhall</a>
+                </div>
+                <div class="paper-venue">IEEE Signal Processing Cup, ICASSP, 2025</div>
+                <div class="paper-links">
+                  <a href="https://arxiv.org/abs/2510.04630">arXiv</a>
+                </div>
                 <p>Ensemble fusing spatial transformers and frequency analysis with conditional face segmentation for state-of-the-art deepfake detection.</p>
-              </td>
-            </tr>
+              </div>
+            </div>
             
-
-            <!-- Paper 5: Intuitionistic Fuzzy Graph (COLOR) -->
-            <tr onmouseout="ifg_stop()" onmouseover="ifg_start()" bgcolor="#ffffd0">
-              <td style="padding:16px;width:20%;vertical-align:middle">
+            <div class="paper-row highlight-yellow" onmouseout="ifg_stop()" onmouseover="ifg_start()">
+              <div class="paper-image">
                 <div class="one">
                   <div class="two" id='ifg_image'>
-                    <img src='images/ifg_rvfl_after.jpg' width=100%>
+                    <img src='images/ifg_rvfl_after.jpg' alt="Intuitionistic Fuzzy Graph">
                   </div>
-                  <img src='images/ifg_rvfl_before.jpg' width=100%>
+                  <img src='images/ifg_rvfl_before.jpg' alt="Intuitionistic Fuzzy Graph">
                 </div>
-                <script type="text/javascript">
-                  function ifg_start() { document.getElementById('ifg_image').style.opacity = "1"; }
-                  function ifg_stop() { document.getElementById('ifg_image').style.opacity = "0"; }
-                  ifg_stop()
-                </script>
-              </td>
-              <td style="padding:8px;width:80%;vertical-align:middle">
-                <a href="https://doi.org/10.1109/IJCNN64981.2025.11229109">
-                  <span class="papertitle">Intuitionistic Fuzzy Graph Embedded Random Vector Functional Link</span>
+              </div>
+              <div class="paper-content">
+                <a href="https://doi.org/10.1109/IJCNN64981.2025.11229109" class="papertitle">
+                  Intuitionistic Fuzzy Graph Embedded Random Vector Functional Link
                 </a>
-                <br>
-                <strong>Vrushank Ahire</strong>,
-                <a href="https://scholar.google.com/citations?user=N_6RJUEAAAAJ">Yogesh Kumar</a>,
-                <a href="https://cse.iitrpr.ac.in/mudasir/">MA Ganaie</a>
-                <br>
-                <em>IJCNN</em>, 2025
-                <br>
-                <p></p>
+                <div class="paper-authors">
+                  <strong>Vrushank Ahire</strong>,
+                  <a href="https://scholar.google.com/citations?user=N_6RJUEAAAAJ">Yogesh Kumar</a>,
+                  <a href="https://cse.iitrpr.ac.in/mudasir/">MA Ganaie</a>
+                </div>
+                <div class="paper-venue">IJCNN, 2025</div>
                 <p>Graph-embedded intuitionistic fuzzy RVFL network tackling class imbalance while preserving dataset topology.</p>
-              </td>
-            </tr>
-
-            <!-- Paper 6: Granular Ball Twin Support Vector Machine with Universum Data (NO COLOR) -->
-            <tr onmouseout="universum_stop()" onmouseover="universum_start()">
-              <td style="padding:16px;width:20%;vertical-align:middle">
+              </div>
+            </div>
+            
+            <div class="paper-row" onmouseout="universum_stop()" onmouseover="universum_start()">
+              <div class="paper-image">
                 <div class="one">
                   <div class="two" id='universum_image'>
-                    <img src='images/granular_universum_after.jpg' width=100%>
+                    <img src='images/granular_universum_after.jpg' alt="Granular Ball Universum">
                   </div>
-                  <img src='images/granular_universum_before.jpg' width=100%>
+                  <img src='images/granular_universum_before.jpg' alt="Granular Ball Universum">
                 </div>
-                <script type="text/javascript">
-                  function universum_start() { document.getElementById('universum_image').style.opacity = "1"; }
-                  function universum_stop() { document.getElementById('universum_image').style.opacity = "0"; }
-                  universum_stop()
-                  </script>
-              </td>
-              <td style="padding:8px;width:80%;vertical-align:middle">
-                <a href="https://doi.org/10.1016/j.neunet.2025.107974">
-                  <span class="papertitle">Granular Ball Twin Support Vector Machine with Universum Data</span>
+              </div>
+              <div class="paper-content">
+                <a href="https://doi.org/10.1016/j.neunet.2025.107974" class="papertitle">
+                  Granular Ball Twin Support Vector Machine with Universum Data
                 </a>
-                <br>
-                <a href="https://cse.iitrpr.ac.in/mudasir/">MA Ganaie</a> and
-                <strong>Vrushank Ahire</strong>
-                <br>
-                <em>Neural Networks</em>, 2025
-                <br>
-                <a href="https://arxiv.org/abs/2412.03375">arXiv</a>
-                <p></p>
+                <div class="paper-authors">
+                  <a href="https://cse.iitrpr.ac.in/mudasir/">MA Ganaie</a> and
+                  <strong>Vrushank Ahire</strong>
+                </div>
+                <div class="paper-venue">Neural Networks, 2025</div>
+                <div class="paper-links">
+                  <a href="https://arxiv.org/abs/2412.03375">arXiv</a>
+                </div>
                 <p>Integrates granular balls concept and Universum learning into Twin SVM for noise-robust classification with enhanced domain knowledge.</p>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="2" style="padding:8px;"><h3 class="year-heading">2024</h3></td>
-            </tr>
-            <!-- Paper 7: Random Adaptive Cache Placement Policy (COLORED) -->
-            <tr onmouseout="cache_stop()" onmouseover="cache_start()" bgcolor="#ffffd0">
-              <td style="padding:16px;width:20%;vertical-align:middle">
+              </div>
+            </div>
+          </div>
+          
+          <!-- 2024 Papers -->
+          <div style="margin: 24px 0;">
+            <h3 class="year-heading">2024</h3>
+            
+            <div class="paper-row highlight-yellow" onmouseout="cache_stop()" onmouseover="cache_start()">
+              <div class="paper-image">
                 <div class="one">
                   <div class="two" id='cache_image'>
-                    <img src='images/random_cache_after.jpg' width=100%>
+                    <img src='images/random_cache_after.jpg' alt="Cache Placement">
                   </div>
-                  <img src='images/random_cache_before.jpg' width=100%>
+                  <img src='images/random_cache_before.jpg' alt="Cache Placement">
                 </div>
-                <script type="text/javascript">
-                  function cache_start() { document.getElementById('cache_image').style.opacity = "1"; }
-                  function cache_stop() { document.getElementById('cache_image').style.opacity = "0"; }
-                  cache_stop()
-                </script>
-              </td>
-              <td style="padding:8px;width:80%;vertical-align:middle">
-                <a href="https://doi.org/10.1109/HiPCW63042.2024.00058">
-                  <span class="papertitle">Random Adaptive Cache Placement Policy</span>
+              </div>
+              <div class="paper-content">
+                <a href="https://doi.org/10.1109/HiPCW63042.2024.00058" class="papertitle">
+                  Random Adaptive Cache Placement Policy
                 </a>
-                <br>
-                <strong>Vrushank Ahire</strong>,
-                <a href="https://www.linkedin.com/in/pranav-menon-95a95a257">Pranav Menon</a>,
-                <a href="https://www.linkedin.com/in/aniruddh-muley-56002a256">Aniruddh Muley</a>,
-                <a href="https://scholar.google.com/citations?user=GbejLhIAAAAJ">Abhinandan S Prasad</a>
-                <br>
-                <em>IEEE HiPC</em>, 2024
-                <br>
-                <a href="https://arxiv.org/abs/2502.02349">arXiv</a>
-                <p></p>
+                <div class="paper-authors">
+                  <strong>Vrushank Ahire</strong>,
+                  <a href="https://www.linkedin.com/in/pranav-menon-95a95a257">Pranav Menon</a>,
+                  <a href="https://www.linkedin.com/in/aniruddh-muley-56002a256">Aniruddh Muley</a>,
+                  <a href="https://scholar.google.com/citations?user=GbejLhIAAAAJ">Abhinandan S Prasad</a>
+                </div>
+                <div class="paper-venue">IEEE HiPC, 2024</div>
+                <div class="paper-links">
+                  <a href="https://arxiv.org/abs/2502.02349">arXiv</a>
+                </div>
                 <p>Hybrid cache replacement algorithm combining random allocation with V-Way cache achieving up to 80.82% hit rates.</p>
-              </td>
-            </tr>
+              </div>
+            </div>
+          </div>
 
-          </tbody></table>
-
-          
-				
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr>
               <td style="padding:0px">
@@ -346,6 +589,33 @@
       if(btn){ btn.addEventListener('click', function(e){ e.stopPropagation(); toggle(); }); }
       wrapper.addEventListener('keydown', function(e){ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); toggle(); } });
     })();
+    </script>
+
+    <script>
+      // Hover effects for papers
+      function eeg_start() { document.getElementById('eeg_image').style.opacity = "1"; }
+      function eeg_stop() { document.getElementById('eeg_image').style.opacity = "0"; }
+      function maven_start() { document.getElementById('maven_image').style.opacity = "1"; }
+      function maven_stop() { document.getElementById('maven_image').style.opacity = "0"; }
+      function granular_start() { document.getElementById('granular_image').style.opacity = "1"; }
+      function granular_stop() { document.getElementById('granular_image').style.opacity = "0"; }
+      function sfanet_start() { document.getElementById('sfanet_image').style.opacity = "1"; }
+      function sfanet_stop() { document.getElementById('sfanet_image').style.opacity = "0"; }
+      function ifg_start() { document.getElementById('ifg_image').style.opacity = "1"; }
+      function ifg_stop() { document.getElementById('ifg_image').style.opacity = "0"; }
+      function universum_start() { document.getElementById('universum_image').style.opacity = "1"; }
+      function universum_stop() { document.getElementById('universum_image').style.opacity = "0"; }
+      function cache_start() { document.getElementById('cache_image').style.opacity = "1"; }
+      function cache_stop() { document.getElementById('cache_image').style.opacity = "0"; }
+      
+      // Initialize all hover effects to off
+      eeg_stop();
+      maven_stop();
+      granular_stop();
+      sfanet_stop();
+      ifg_stop();
+      universum_stop();
+      cache_stop();
     </script>
 
   </body>
