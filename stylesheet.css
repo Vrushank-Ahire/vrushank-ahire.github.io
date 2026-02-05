@@ -203,7 +203,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   /* Default visual scale */
-  zoom: 1.15;   /* 105% */
+  zoom: 1;   /* 105% */
 }
 
 
