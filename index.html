@@ -253,6 +253,32 @@ body {
       }
       
       @media (max-width: 768px) {
+  /* Only target first row (profile row) */
+  table tbody tr:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  table tbody tr:first-child td {
+    width: 100% !important;
+    text-align: center;
+    display: block;
+  }
+
+  /* Move image td above text td */
+  table tbody tr:first-child td:nth-child(2) {
+    order: 1;
+  }
+
+  table tbody tr:first-child td:nth-child(1) {
+    order: 2;
+  }
+
+  .profile-img {
+    margin: 10px auto 15px auto;
+    display: block;
+  }
         .paper-row {
           grid-template-columns: 1fr;
           gap: 22px;
